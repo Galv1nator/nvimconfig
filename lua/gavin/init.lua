@@ -1,0 +1,5 @@
+require("gavin.remap")
+require("gavin.lazy")
+require("gavin.set")
+vim.keymap.set("i", "jj", "<esc>")
+--vim.diagnostic.config({ virtual_text = true })
