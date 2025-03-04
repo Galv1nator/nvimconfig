@@ -12,15 +12,20 @@ lsp.preset('recommended')
 lsp.setup()
 cmp.setup({
     preselect = cmp.PreselectMode.None,
-mapping = {
-["<CR>"] = cmp.config.disable,
-["<C-p>"] = cmp.mapping.select_prev_item(),
-["<C-n>"] = cmp.mapping.select_next_item(),
-["<C-e>"] = cmp.mapping.abort(),
-["<C-y>"] = cmp.mapping.confirm()
-}
-}
-)
+    mapping = {
+    ["<CR>"] = cmp.config.disable,
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-y>"] = cmp.mapping.confirm()
+    },
+    sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'path' },
+    })
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
