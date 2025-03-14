@@ -4,6 +4,7 @@ return {
 	dependencies = {
 		-- LSP Support
 		{'neovim/nvim-lspconfig'},             -- Required
+        {'saghen/blink.cmp'},
 		{'williamboman/mason.nvim'},           -- Optional
 		{'williamboman/mason-lspconfig.nvim'}, -- Optional
 
