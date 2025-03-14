@@ -9,6 +9,7 @@ lsp.preset('recommended')
 -- (Optional) Configure lua language server for neovim
 -- lsp.nvim_workspace()
 
+
 lsp.setup()
 cmp.setup({
     preselect = cmp.PreselectMode.None,
@@ -17,7 +18,8 @@ cmp.setup({
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-e>"] = cmp.mapping.abort(),
-    ["<C-y>"] = cmp.mapping.confirm()
+    ["<C-y>"] = cmp.mapping.confirm(),
+    ['<C-Space>'] = cmp.mapping.complete(),
     },
     sources = cmp.config.sources({
     { name = 'nvim_lsp' },
